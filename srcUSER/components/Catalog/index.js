@@ -20,21 +20,19 @@ const Catalog = () => {
     <View style={classes.wrap}>
       <Header title="КАТАЛОГ" sum="300.00" />
       <Input />
-      <ScrollView style={{width: '100%', height: '100%'}}>
 
         <View style={classes.itemsWrap}>
 
           {
             catalog.length > 0 ?
               catalog.map((el, i) => {
-                return <TouchableOpacity key={i} style={classes.itemsList} onPress={() => navigation.navigate('Detail')}><Text>{el.name}</Text></TouchableOpacity>
+                return <TouchableOpacity key={i} style={classes.itemsList} onPress={() => navigation.navigate('Detail', el.name)}><Text>{el.name}</Text></TouchableOpacity>
               }) : <Text>Loading...</Text>
           }
 
 
         </View>
 
-      </ScrollView>
     </View>
   )
 };

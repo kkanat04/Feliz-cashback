@@ -94,3 +94,16 @@ export const category = async (setCatalog) => {
 
   setCatalog(contentCotegory)
 }
+
+export const product = async (setCategoty) => {
+  const getProduct = await fetch("http://165.22.49.123/api/v1/list/product", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: 'Token 306ea77543f3071311a84fc0e08389d3b0a7aecd'
+    },
+  });
+  const contentProduct = await getProduct.json();
+  setCategoty(contentProduct)
+}
