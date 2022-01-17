@@ -37,10 +37,6 @@ const Profile = () => {
 
   }
 
-
-
-
-
   return (
     <View style={classes.wrap}>
       <Header title="ПРОФИЛЬ" />

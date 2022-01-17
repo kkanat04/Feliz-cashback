@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View , LogBox} from 'react-native';
 import Main from './srcUSER/Main';
 import Stack from "./FirstPage";
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -9,6 +9,8 @@ import MainToken from './srcUSER/MainToken';
 import MainSeller from './srcSELLER/MainSeller';
 
 export default function App() {
+
+  LogBox.ignoreLogs(['Remote debugger']);
 
   const [tok, setTok] = useState('')
   const getData = async () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TextInput, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
 import Header from '../../../srcUSER/components/Header';
 import classes from './catalogCSS';
 import { useNavigation } from '@react-navigation/native';
@@ -18,7 +18,7 @@ const Catalog = () => {
 
   return (
     <View style={classes.wrap}>
-      <Header title="КАТАЛОГ" sum="300.00" />
+      <Header title="КАТАЛОГ" icon='coin' />
       <Input />
 
         <View style={classes.itemsWrap}>
@@ -27,7 +27,9 @@ const Catalog = () => {
             catalog.length > 0 ?
               catalog.map((el, i) => {
                 return <TouchableOpacity key={i} style={classes.itemsList} onPress={() => navigation.navigate('Detail', el.name)}><Text>{el.name}</Text></TouchableOpacity>
-              }) : <Text>Loading...</Text>
+              }) : <View style={{ flex: 1, width: '100%', alignItems: 'center', justifyContent: 'center', height: '70%' }}>
+              <ActivityIndicator size="large" color="#456A62" />
+            </View>
           }
 
 

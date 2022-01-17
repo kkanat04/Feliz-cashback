@@ -75,8 +75,6 @@ const classes = StyleSheet.create({
   detailsCol: {
     width: '70%',
     flexDirection: 'column',
-    // justifyContent: 'space-between',
-
   },
   detailsSpan: {
     color: '#FFD600',
